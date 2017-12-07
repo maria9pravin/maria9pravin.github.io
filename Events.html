@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../../../favicon.ico">
+
+    <title>Events -Your Personal Assistant</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="bootstrap-4.0.0-beta.2-dist\css\bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="bootstrap-4.0.0-beta.2-dist\css\justified-nav.css" rel="stylesheet">
+	<script src="bootstrap-4.0.0-beta.2-dist\js\jquery-3.2.1.min.js"></script>
+	<script type="text/javascript">
+	
+	
+	$(document).ready(function(){
+	$("#form").hide();
+	
+	$(".close").click(function(){
+		$(".eventRow")
+	});
+	
+	$("#newEvent").click(function(){
+		$("#form").show();
+	});
+	
+	$("#submitForm").click(function(){
+		alert("Your event is added successfully!");
+		$("#form").hide();
+	});
+	
+	$("#delete1").click(function(){
+		//$("#row1").hide();
+		document.getElementById("row1").innerHTML = "";
+	});
+	
+	$("#delete2").click(function(){
+		//$("#row1").hide();
+		document.getElementById("row2").innerHTML = "";
+	});
+	
+	$("#delete3").click(function(){
+		//$("#row1").hide();
+		document.getElementById("row3").innerHTML = "";
+	});
+	
+	
+	
+	});
+	</script>
+	
+	<style>
+
+	.footer {
+		float: right;
+	}
+	
+	.eventRow {
+	margin-top: 10px;
+	margin-bottom: 10px;
+	border-bottom: black 1px;
+	}
+		
+	div {
+    font-size: 20px;
+	}
+	
+	.btnEvent {
+		float: right;
+	}
+	.close {
+		float: right;
+		-ms-transform: scale(1.5); /* IE */
+		-moz-transform: scale(1.5); /* FF */
+		-webkit-transform: scale(1.5); /* Safari and Chrome */
+		-o-transform: scale(1.5); /* Opera */
+	}
+	input[type=checkbox] {
+
+		-ms-transform: scale(1.5); /* IE */
+		-moz-transform: scale(1.5); /* FF */
+		-webkit-transform: scale(1.5); /* Safari and Chrome */
+		-o-transform: scale(1.5); /* Opera */
+		padding: 10px;
+	}
+	
+	input[type=text], select {
+		width: 100%;
+		padding: 12px 20px;
+		margin: 8px 0;
+		display: inline-block;
+		border: 1px solid #ccc;
+		border-radius: 4px;
+		box-sizing: border-box;
+	}
+
+	input[type=submit] {
+		width: 100%;
+		background-color: #4CAF50;
+		color: white;
+		padding: 14px 20px;
+		margin: 8px 0;
+		border: none;
+		border-radius: 4px;
+		cursor: pointer;
+	}
+
+	input[type=submit]:hover {
+		background-color: #45a049;
+	}
+	
+
+
+
+	</style>
+	
+  </head>
+
+  <body>
+
+    <div class="container">
+
+      <header class="masthead">
+        <h3 class="text-muted">Your Personal Virtual Assistant</h3>
+
+        <nav class="navbar navbar-expand-md navbar-light bg-light rounded mb-3">
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav text-md-center nav-justified w-100">
+              <li class="nav-item ">
+                <a class="nav-link" href="index.html">Home </a>
+              </li>
+			  <li class="nav-item">
+                <a class="nav-link" href="about.html">About</a>
+              </li>
+              <li class="nav-item">
+				<a class="nav-link" href="Tasks.html">Tasks</a>
+                
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="Events.html">Events<span class="sr-only">(current)</span></a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+
+      <main role="main">
+
+        <!-- Jumbotron --> 
+        <div class="jumbotron">
+          <h1>Upcoming Events:</h1>
+		  <hr/>
+		  <div>
+		  <div id="row1">
+		  <span class="eventRow"><div>  Christmas Market at TU/e!</div><button id="delete1" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></span><br>
+		  <hr/>
+		  </div>
+		  <div id="row2">
+		  <span class="eventRow"><div>  Christmas 2017</div><button id="delete2" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></span><br>
+		  <hr/>
+		  </div>
+		  <div id="row3">
+		  <span class="eventRow"><div>  New Year's Eve Party!</div><button id="delete3" type="button" class="close" aria-label="Close"><span aria-hidden="true">&times;</span></button></span><br>
+		  <hr/>
+		  </div>
+		  <p><a id="newEvent" class="btnEvent btn btn-lg btn-success" role="button">Add</a></p>
+		  
+        </div>
+		
+		<div class="jumbotron" id="form">
+			<h1>Enter event details:</h1>
+			<form>
+				<label for="Ename">Event Name</label>
+				<input type="text" id="Ename" name="eventname" placeholder="Event name..." required>
+
+				<label for="Date">Date (dd/mm/yyyy)</label>
+				<input type="text" id="date" name="date" placeholder="Date..." required>
+				
+				<label for="Place">Place</label>
+				<input type="text" id="place" name="place" placeholder="Place...">
+
+				<label for="Reminder">Reminder</label>
+				<select id="Reminder" name="Reminder">
+					<option value="None">Not Required</option>
+					<option value="Day before">Day before</option>
+					<option value="One week before">One week before</option>
+				</select>
+  
+				<input id="submitForm" class="btnEvent btn btn-lg btn-success" type="submit" value="Submit">
+			</form>
+		</div>
+		
+      </main>
+
+      <!-- Site footer -->
+      <footer class="footer">
+        <p>&copy; M&M Company 2017</p>
+      </footer>
+
+    </div> <!-- /container -->
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="bootstrap-4.0.0-beta.2-dist\js\jquery-3.2.1.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="bootstrap-4.0.0-beta.2-dist\js\bootstrap.min.js"></script>
+  </body>
+</html>
